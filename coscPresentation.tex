@@ -121,8 +121,10 @@
 
 \begin{frame}
 \frametitle{Motivation}
-\item Ford fulkerson has a large running time for finding the minimum cut for large integer flows. It runs in pseudo polynomial time.  This is a big drawback.
-\item There exists a randomnized algorithm that could solve the minimum cut problem that is not affected by large integer flows.
+\begin{itemize}
+	\item Ford fulkerson has a large running time for finding the minimum cut for large integer flows. It runs in pseudo polynomial time.  This is a big drawback.
+	\item There exists a randomnized algorithm that could solve the minimum cut problem that is not affected by large integer flows.
+\end{itemize}
 
 
 \end{frame}
@@ -131,16 +133,16 @@
 \begin{frame}
 \frametitle{Randomnized Algorithms }
 \begin{block}{Waiting for first Success}<1->
-	Bob has only p=10\% possibility to pass a math exam, but you can take the exam as many times as you like. 
-	\begin{itemize}
-		\item What's possibility of taking the exam only once?
-		\item How about 10 times, 100 times 
-	\end{itemize}
+Bob has only p=10\% possibility to pass a math exam, but you can take the exam as many times as you like. 
+\begin{itemize}
+	\item What's possibility of taking the exam only once?
+	\item How about 10 times, 100 times 
+\end{itemize}
 \end{block}
 \begin{itemize}
 	\item Using the following formula 
 	\begin{equation*}
-		\Pr\left(\text{Within N exams, Bob passes}\right)=1-(1-p)^N
+	\Pr\left(\text{Within N exams, Bob passes}\right)=1-(1-p)^N
 	\end{equation*}
 \end{itemize}
 With N=5, P = 0.41. With N=10, P = 0.65.
@@ -150,78 +152,114 @@ So after a large number of tries, Bob will finally pass the exam for almost sure
 \end{frame}
 %------------------------------------------------
 \begin{frame}
-	\frametitle{Randomnized Algorithms}
-	\begin{block}{ what's randomnized algorithms}<1->
-	Randomnized algorithm is an algorithm that makes random decision when it processes the input. So this kind of algorithm cannot always get the right answer.
-	However, we have showed even if it can only succeed with small probability, we can get the right answer by running it many times. 	
-	\end{block}
-	\begin{block}{Why we need that}<2->
-		\begin{enumerate}
-			\item Simpler
-			\item New way to analysis complex system
-		\end{enumerate}
-	\end{block}
+\frametitle{Randomnized Algorithms}
+\begin{block}{ what's randomnized algorithms}<1->
+Randomnized algorithm is an algorithm that makes random decision when it processes the input. So this kind of algorithm cannot always get the right answer.
+However, we have showed even if it can only succeed with small probability, we can get the right answer by running it many times. 	
+\end{block}
+\begin{block}{Why we need that}<2->
+\begin{enumerate}
+	\item Simpler
+	\item New way to analysis complex system
+\end{enumerate}
+\end{block}
 \end{frame}
 \section{Analysis of Contract Algorithm}
 
 %------------------------------------------------
-\subsection{Error Probability}
-\begin{frame}
 
-  
+\begin{frame}
+\frametitle{The Problem}
+\begin{itemize}
+		\item Instance: An undirected graph G(V, E)
+		\item Question: Find the global minimum cut. Note that global here refers to the fact that any cut is allowed, as there is no sink or source in our graph for this type of problem.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Problem 2}
+\begin{itemize}
+		\item The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What is contraction algorithm?}
+\begin{itemize}
+	\item David Karger discoverst the contraction algorithm in 1992.
+	\item Multigraph: An undirected graph that is allowed to have multiple edges between the same pair of nodes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What is contraction algorithm? 2}
+\begin{itemize}
+	\item Randomly choose edge e = (u,v) of G, we take this edge and we create a new graph G' where the nodes that edge e was connected to become one node. 
+	\item Recursively call the contraction algorithm until only 2 nodes are left. 
+	\item add illustration.
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+\subsection{Error Probability}
+
 \frametitle{Analysis of Contract Algorithm}
 \begin{overlayarea}{\linewidth}{\textheight}
-	\begin{onlyenv}<1-2,4>
-		\begin{block}{Success Rate of Contract Algorithm}
-			The Contraction Algorithm returns a global min-cut of G with probability at least $1/\binom n2$	
-		\end{block}
-	\end{onlyenv}
-	
-	\begin{onlyenv}<2>
-	
-		\begin{block}{Proof}
-		
-		Let's assume the global min-cut in graph G(V,E) is (A,B) and it has size k. The set of cut edges is F
-		\begin{enumerate}[{Case}.1]
-				\item An edge in F is contracted. Then game over.
-				\item The contracted edge is not in F. We can continue contracting.
-		\end{enumerate}
-		So, how large or small is the possibility $p_1$ that we end our game at first step? \\
-		\end{block}
-	\end{onlyenv}
-	
-	\begin{onlyenv}<3>
-		\begin{block}{Proof Cont'd}<3>
-			When contracting the first edge randomly,
-		\begin{enumerate}
-			\item $\forall v \in V, deg(v)\geq k$
-			\item $\abs{E}\geq \frac{1}{2}nk$
-			\item $p_1\leq \frac{k}{\frac{1}{2}nk}=\frac{2}{n}$
-		\end{enumerate}
-		After j iteration, there are n-j super-nodes in the current graph G'.
-		\begin{enumerate}			
-			\item $\abs{E'}\geq \frac{1}{2}(n-j)k$
-			\item $p_j\leq \frac{k}{\frac{1}{2}(n-j)k}=\frac{2}{n-j}$
-		\end{enumerate}
-		\begin{equation*}
-			\Pr\left(\text{Correct}\right)\geq \prod _{i=0}^{n-3}(1-p_n) = \prod _{i=0}^{n-3}{\Bigl (}1-{\frac {2}{n-i}}{\Bigr )}={\binom n2}^{-1}
-		\end{equation*}
-		\end{block}
-	\end{onlyenv}
-\subsection{Time Complexity}	
-	\begin{onlyenv}<4>
-		\begin{block}{Time Complexity}
-		After contracting $n^2\log{}n$ times, the probability that we do not find the optimal solution
-		\begin{equation*}
-			p_e = (1-{\binom n2}^{-1})^{n^2\log{}n} \approx 1/n
-		\end{equation*}
-		so the running time is $\mathcal{O}(n^2\log{}n\times \abs{E})$
-		\end{block}
+\begin{onlyenv}<1-2,4>
+\begin{block}{Success Rate of Contract Algorithm}
+The Contraction Algorithm returns a global min-cut of G with probability at least $1/\binom n2$	
+\end{block}
+\end{onlyenv}
 
-	\end{onlyenv}
+\begin{onlyenv}<2>
+
+\begin{block}{Proof}
+
+Let's assume the global min-cut in graph G(V,E) is (A,B) and it has size k. The set of cut edges is F
+\begin{enumerate}[{Case}.1]
+\item An edge in F is contracted. Then game over.
+\item The contracted edge is not in F. We can continue contracting.
+\end{enumerate}
+So, how large or small is the possibility $p_1$ that we end our game at first step? \\
+\end{block}
+\end{onlyenv}
+
+\begin{onlyenv}<3>
+\begin{block}{Proof Cont'd}<3>
+When contracting the first edge randomly,
+\begin{enumerate}
+	\item $\forall v \in V, deg(v)\geq k$
+	\item $\abs{E}\geq \frac{1}{2}nk$
+	\item $p_1\leq \frac{k}{\frac{1}{2}nk}=\frac{2}{n}$
+\end{enumerate}
+After j iteration, there are n-j super-nodes in the current graph G'.
+\begin{enumerate}			
+	\item $\abs{E'}\geq \frac{1}{2}(n-j)k$
+	\item $p_j\leq \frac{k}{\frac{1}{2}(n-j)k}=\frac{2}{n-j}$
+\end{enumerate}
+\begin{equation*}
+\Pr\left(\text{Correct}\right)\geq \prod _{i=0}^{n-3}(1-p_n) = \prod _{i=0}^{n-3}{\Bigl (}1-{\frac {2}{n-i}}{\Bigr )}={\binom n2}^{-1}
+\end{equation*}
+\end{block}
+\end{onlyenv}
+\subsection{Time Complexity}	
+\begin{onlyenv}<4>
+\begin{block}{Time Complexity}
+After contracting $n^2\log{}n$ times, the probability that we do not find the optimal solution
+\begin{equation*}
+p_e = (1-{\binom n2}^{-1})^{n^2\log{}n} \approx 1/n
+\end{equation*}
+so the running time is $\mathcal{O}(n^2\log{}n\times \abs{E})$
+\end{block}
+
+\end{onlyenv}
 
 \end{overlayarea}
-	
+
 \end{frame}
 %------------------------------------------------
 
@@ -230,11 +268,11 @@ So after a large number of tries, Bob will finally pass the exam for almost sure
 \begin{frame}
 \frametitle{Bullet Points}
 \begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-\item Nam cursus est eget velit posuere pellentesque
-\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
+	\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
+	\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
+	\item Nam cursus est eget velit posuere pellentesque
+	\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
 \end{itemize}
 \end{frame}
 
@@ -264,9 +302,9 @@ Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenati
 \column{.45\textwidth} % Left column and width
 \textbf{Heading}
 \begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
+	\item Statement
+	\item Explanation
+	\item Example
 \end{enumerate}
 
 \column{.5\textwidth} % Right column and width
