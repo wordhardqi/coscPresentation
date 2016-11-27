@@ -79,6 +79,8 @@
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 
+\graphicspath{ {images/} }
+
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -196,11 +198,17 @@ However, we have showed even if it can only succeed with small probability, we c
 \begin{itemize}
 	\item Randomly choose edge e = (u,v) of G, we take this edge and we create a new graph G' where the nodes that edge e was connected to become one node. 
 	\item Recursively call the contraction algorithm until only 2 nodes are left. 
-	\item add illustration.
+	
 \end{itemize}
 \end{frame}
 
 
+\begin{frame}
+\frametitle{What is contraction algorithm? 2}
+\includegraphics[scale=0.5]{kargers_diagram}
+
+Successful run of the contraction algorithm on a graph with 10 nodes.  The minimum cut is of size 3, note the 3 edges between the white node and the red node at the rightmost diagram.
+\end{frame}
 
 
 
@@ -382,6 +390,12 @@ This statement requires citation \cite{p1}.
 \frametitle{References}
 \footnotesize{
 \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+\bibitem[Kleinberg, 2006]{p714} Kleinberg and Tardos (2006)
+\newblock Finding the Global Min Cut
+\newblock \emph{Algorithm Design} 714 - 719
+
+
+
 \bibitem[Karger Diagram]{p1} Thore Husfeldt  (2012)
 \newblock Karger's Algorithm Diagram
 \newblock \emph{Wikipedia} 
