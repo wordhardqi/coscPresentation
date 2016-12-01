@@ -34,8 +34,10 @@
 \headcommand {\beamer@framepages {11}{15}}
 \headcommand {\slideentry {2}{6}{1}{16/16}{Error Probability}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@partpages {1}{16}}
-\headcommand {\beamer@subsectionpages {11}{16}}
-\headcommand {\beamer@sectionpages {6}{16}}
-\headcommand {\beamer@documentpages {16}}
-\headcommand {\def \inserttotalframenumber {11}}
+\headcommand {\slideentry {2}{6}{2}{17/17}{Error Probability}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\beamer@partpages {1}{17}}
+\headcommand {\beamer@subsectionpages {11}{17}}
+\headcommand {\beamer@sectionpages {6}{17}}
+\headcommand {\beamer@documentpages {17}}
+\headcommand {\def \inserttotalframenumber {12}}

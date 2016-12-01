@@ -120,7 +120,7 @@
 \begin{frame}
 \frametitle{Motivation}
 \begin{itemize}
-	\item Ford fulkerson has a large running time for finding the minimum cut for large integer flows. It runs in pseudo polynomial time.  This is a big drawback.
+	\item Ford Fulkerson has a large running time for finding the minimum cut for large integer flows. It runs in pseudo polynomial time.  This is a big drawback.
 	\item There exists a randomnized algorithm that could solve the minimum cut problem that is not affected by large integer flows.
 \end{itemize}
 
@@ -152,8 +152,11 @@ So after a large number of tries, Bob will finally pass the exam for almost sure
 \begin{frame}
 \frametitle{Randomnized Algorithms}
 \begin{block}{ what's randomnized algorithms}<1->
-Randomnized algorithm is an algorithm that makes random decision when it processes the input. So this kind of algorithm cannot always get the right answer.
-However, we have showed even if it can only succeed with small probability, we can get the right answer by running it many times. 	
+\begin{enumerate}
+	\item Random decision
+	\item Random result
+\end{enumerate}
+We have showed even if it can only succeed with small probability, we can get the right answer by running it many times. 	
 \end{block}
 \begin{block}{Why we need that}<2->
 \begin{enumerate}
@@ -167,25 +170,46 @@ However, we have showed even if it can only succeed with small probability, we c
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{The Problem}
-\begin{block}{Instance}
-An undirected graph G(V, E)	
-\end{block}
-\begin{block}{Question}
-
-Find the global minimum cut. Note that global here refers to the fact that any cut is allowed, as there is no sink or source in our graph for this type of problem.
-\end{block}
-		
-
-
+%<<<<<<< HEAD
+%\frametitle{The Problem}
+%\begin{block}{Instance}
+%An undirected graph G(V, E)	
+%\end{block}
+%\begin{block}{Question}
+%
+%Find the global minimum cut. Note that global here refers to the fact that any cut is allowed, as there is no sink or source in our graph for this type of problem.
+%\end{block}
+%		
+%
+%
+%=======
+\frametitle{Instance and Question}
+\begin{itemize}
+		\item Instance: An undirected graph G(V, E)
+		\item Question: Find the global minimum cut. Note that global here refers to the fact that any cut is allowed, as there is no sink or source in our graph for this type of problem.
+\end{itemize}
 \end{frame}
-\begin{frame}
-	The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
-	\begin{figure}
-		\includegraphics{images/220px-Min_cut_example.png}
 
-	\end{figure}
-	\end{frame}
+\begin{frame}
+\frametitle{What is minimum cut?}
+\begin{itemize}
+		\item The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
+		\item Red line is a cut
+		\item Green line is a min cut
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{min_cut_png_version}
+\end{center}
+
+%>>>>>>> 967e54436a283a31a74a877f0c3654de6739fcf6
+\end{frame}
+%\begin{frame}
+%	The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
+%	\begin{figure}
+%		\includegraphics{images/220px-Min_cut_example.png}
+%
+%	\end{figure}
+%	\end{frame}
 %\begin{frame}
 %\frametitle{The Problem }
 %\begin{itemize}
@@ -194,15 +218,18 @@ Find the global minimum cut. Note that global here refers to the fact that any c
 %\end{frame}
 
 \begin{frame}
-\frametitle{What is contraction algorithm?}
+\frametitle{Definitions for Understanding Contraction Algorithm}
 \begin{itemize}
-	\item David Karger discovered the contraction algorithm in 1992.
+	\item David Karger: discovered the contraction algorithm in 1992.
 	\item Multigraph: An undirected graph that is allowed to have multiple edges between the same pair of nodes.
+	\item Supernode: consists of nodes that have been combined due to contracting edges
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{What is contraction algorithm? }
+
+\frametitle{What is contraction algorithm?}
+
 \begin{itemize}
 	\item Randomly choose edge e = (u,v) of G, we take this edge and we create a new graph G' where the nodes that edge e was connected to become one node. 
 	\item Recursively call the contraction algorithm until only 2 nodes are left. 
@@ -298,6 +325,32 @@ so the running time is $\mathcal{O}(n^2\log{}n\times \abs{E})$
 %------------------------------------------------
 
 %------------------------------------------------
+
+
+
+\begin{frame}
+\frametitle{References}
+\footnotesize{
+\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+\bibitem[Kleinberg, 2006]{p714} Kleinberg and Tardos (2006)
+\newblock Finding the Global Min Cut
+\newblock \emph{Algorithm Design} 714 - 719
+
+
+
+\bibitem[Karger Diagram]{p1} Thore Husfeldt  (2012)
+\newblock Karger's Algorithm Diagram
+\newblock \emph{Wikipedia} 
+
+\bibitem[Min Cut Diagram]{p1} Kilom691 (2012)
+\newblock Min Cut Diagram
+\newblock \emph{Wikipedia} 
+
+
+\end{thebibliography}
+}
+\end{frame}
+
 
 %------------------------------------------------
 

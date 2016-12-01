@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 DEC 2016 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 DEC 2016 10:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -770,36 +770,36 @@ File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/mat
 
 ] [6
 
-] <images/220px-Min_cut_example.png, id=230, 220.825pt x 171.64125pt>
-File: images/220px-Min_cut_example.png Graphic file (type png)
- <use images/220px-Min_cut_example.png>
-Package pdftex.def Info: images/220px-Min_cut_example.png used on input line 188.
-(pdftex.def)             Requested size: 220.82445pt x 171.64081pt.
+] <images/min_cut_png_version.png, id=230, 220.825pt x 171.64125pt>
+File: images/min_cut_png_version.png Graphic file (type png)
+ <use images/min_cut_png_version.png>
+Package pdftex.def Info: images/min_cut_png_version.png used on input line 205.
+(pdftex.def)             Requested size: 171.14764pt x 133.03366pt.
  [7
 
- <./images/220px-Min_cut_example.png>] [8
+ <./images/min_cut_png_version.png>] [8
 
 ] [9
 
 ] <images/kargers_diagram.png, id=312, 316.18124pt x 145.54375pt>
 File: images/kargers_diagram.png Graphic file (type png)
  <use images/kargers_diagram.png>
-Package pdftex.def Info: images/kargers_diagram.png used on input line 228.
+Package pdftex.def Info: images/kargers_diagram.png used on input line 255.
 (pdftex.def)             Requested size: 158.09023pt x 72.77168pt.
  <images/error_case.png, id=313, 474.77374pt x 206.7725pt>
 File: images/error_case.png Graphic file (type png)
  <use images/error_case.png>
-Package pdftex.def Info: images/error_case.png used on input line 228.
+Package pdftex.def Info: images/error_case.png used on input line 255.
 (pdftex.def)             Requested size: 142.43321pt x 62.03223pt.
  [10
 
  <./images/kargers_diagram.png> <./images/error_case.png>] <images/contract.png, id=341, 782.925pt x 324.21124pt>
 File: images/contract.png Graphic file (type png)
  <use images/contract.png>
-Package pdftex.def Info: images/contract.png used on input line 297.
+Package pdftex.def Info: images/contract.png used on input line 324.
 (pdftex.def)             Requested size: 313.16446pt x 129.68219pt.
 
-Overfull \vbox (31.40941pt too high) detected at line 297
+Overfull \vbox (31.40941pt too high) detected at line 324
  []
 
 [11
@@ -807,10 +807,10 @@ Overfull \vbox (31.40941pt too high) detected at line 297
 ]
 File: images/contract.png Graphic file (type png)
  <use images/contract.png>
-Package pdftex.def Info: images/contract.png used on input line 297.
+Package pdftex.def Info: images/contract.png used on input line 324.
 (pdftex.def)             Requested size: 313.16446pt x 129.68219pt.
 
-Overfull \vbox (31.40941pt too high) detected at line 297
+Overfull \vbox (31.40941pt too high) detected at line 324
  []
 
 [12
@@ -818,10 +818,10 @@ Overfull \vbox (31.40941pt too high) detected at line 297
 ]
 File: images/contract.png Graphic file (type png)
  <use images/contract.png>
-Package pdftex.def Info: images/contract.png used on input line 297.
+Package pdftex.def Info: images/contract.png used on input line 324.
 (pdftex.def)             Requested size: 313.16446pt x 129.68219pt.
 
-Overfull \vbox (31.40941pt too high) detected at line 297
+Overfull \vbox (31.40941pt too high) detected at line 324
  []
 
 [13
@@ -829,10 +829,10 @@ Overfull \vbox (31.40941pt too high) detected at line 297
  <./images/contract.png>]
 File: images/contract.png Graphic file (type png)
  <use images/contract.png>
-Package pdftex.def Info: images/contract.png used on input line 297.
+Package pdftex.def Info: images/contract.png used on input line 324.
 (pdftex.def)             Requested size: 313.16446pt x 129.68219pt.
 
-Overfull \vbox (31.40941pt too high) detected at line 297
+Overfull \vbox (31.40941pt too high) detected at line 324
  []
 
 [14
@@ -840,15 +840,17 @@ Overfull \vbox (31.40941pt too high) detected at line 297
 ]
 File: images/contract.png Graphic file (type png)
  <use images/contract.png>
-Package pdftex.def Info: images/contract.png used on input line 297.
+Package pdftex.def Info: images/contract.png used on input line 324.
 (pdftex.def)             Requested size: 313.16446pt x 129.68219pt.
 
-Overfull \vbox (31.40941pt too high) detected at line 297
+Overfull \vbox (31.40941pt too high) detected at line 324
  []
 
 [15
 
 ] [16
+
+ </usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>] [17
 
 ]
 \tf@nav=\write6
@@ -860,11 +862,11 @@ Overfull \vbox (31.40941pt too high) detected at line 297
 \tf@snm=\write8
 \openout8 = `coscPresentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 363.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 363.
  (/Users/Renming/Google Drive/course/COSC320/cosc320/coscPresentation/.texpadtmp/coscPresentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 363.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 363.
 Package rerunfilecheck Info: File `coscPresentation.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 
@@ -872,21 +874,21 @@ Package rerunfilecheck Info: File `coscPresentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 363.
  ) 
 Here is how much of TeX's memory you used:
- 17030 strings out of 493014
- 329636 string characters out of 6133351
- 408791 words of memory out of 5000000
- 20116 multiletter control sequences out of 15000+600000
- 11003 words of font info for 40 fonts, out of 8000000 for 9000
+ 17082 strings out of 493014
+ 331231 string characters out of 6133351
+ 408910 words of memory out of 5000000
+ 20162 multiletter control sequences out of 15000+600000
+ 11666 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,16n,57p,396b,885s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "/Users/Renming/Google Drive/course/COSC320/cosc320/coscPresentation/.texpadtmp/coscPresentation.pdf" (16 pages, 277629 bytes).
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on "/Users/Renming/Google Drive/course/COSC320/cosc320/coscPresentation/.texpadtmp/coscPresentation.pdf" (17 pages, 301653 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 495 compressed objects within 5 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 594 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
+ 46 named destinations out of 1000 (max. 500000)
  171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
