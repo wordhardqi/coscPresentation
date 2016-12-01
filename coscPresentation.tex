@@ -103,10 +103,6 @@
 \titlepage % Print the title page as the first slide
 \end{frame}
 
-\begin{frame}
-\frametitle{Overview} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-\end{frame}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
@@ -172,18 +168,30 @@ However, we have showed even if it can only succeed with small probability, we c
 
 \begin{frame}
 \frametitle{The Problem}
-\begin{itemize}
-		\item Instance: An undirected graph G(V, E)
-		\item Question: Find the global minimum cut. Note that global here refers to the fact that any cut is allowed, as there is no sink or source in our graph for this type of problem.
-\end{itemize}
-\end{frame}
+\begin{block}{Instance}
+An undirected graph G(V, E)	
+\end{block}
+\begin{block}{Question}
 
-\begin{frame}
-\frametitle{The Problem 2}
-\begin{itemize}
-		\item The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
-\end{itemize}
+Find the global minimum cut. Note that global here refers to the fact that any cut is allowed, as there is no sink or source in our graph for this type of problem.
+\end{block}
+		
+
+
 \end{frame}
+\begin{frame}
+	The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
+	\begin{figure}
+		\includegraphics{images/220px-Min_cut_example.png}
+
+	\end{figure}
+	\end{frame}
+%\begin{frame}
+%\frametitle{The Problem }
+%\begin{itemize}
+%		\item The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}
 \frametitle{What is contraction algorithm?}
@@ -194,20 +202,29 @@ However, we have showed even if it can only succeed with small probability, we c
 \end{frame}
 
 \begin{frame}
-\frametitle{What is contraction algorithm? 2}
+\frametitle{What is contraction algorithm? }
 \begin{itemize}
 	\item Randomly choose edge e = (u,v) of G, we take this edge and we create a new graph G' where the nodes that edge e was connected to become one node. 
 	\item Recursively call the contraction algorithm until only 2 nodes are left. 
 	
 \end{itemize}
+
+
 \end{frame}
 
 
 \begin{frame}
-\frametitle{What is contraction algorithm? 2}
-\includegraphics[scale=0.5]{kargers_diagram}
+\frametitle{What is contraction algorithm? }
+
 
 Successful run of the contraction algorithm on a graph with 10 nodes.  The minimum cut is of size 3, note the 3 edges between the white node and the red node at the rightmost diagram.
+\begin{figure}
+	\includegraphics[scale=0.5]{kargers_diagram}
+\end{figure}
+An error case
+\begin{figure}
+	\includegraphics[scale=0.3]{images/error_case}
+\end{figure}
 \end{frame}
 
 
@@ -217,7 +234,7 @@ Successful run of the contraction algorithm on a graph with 10 nodes.  The minim
 \begin{frame}
 \frametitle{Analysis of Contract Algorithm}
 \begin{overlayarea}{\linewidth}{\textheight}
-\begin{onlyenv}<1-2,4>
+\begin{onlyenv}<1-2,5>
 \begin{block}{Success Rate of Contract Algorithm}
 The Contraction Algorithm returns a global min-cut of G with probability at least $1/\binom n2$	
 \end{block}
@@ -235,9 +252,18 @@ Let's assume the global min-cut in graph G(V,E) is (A,B) and it has size k. The 
 So, how large or small is the possibility $p_1$ that we end our game at first step? \\
 \end{block}
 \end{onlyenv}
-
 \begin{onlyenv}<3>
-\begin{block}{Proof Cont'd}<3>
+	\begin{figure}
+		\includegraphics[scale=0.4]{images/contract}
+	\end{figure}	
+	\begin{enumerate}[{Case}.1]
+\item An edge in F is contracted. Then game over.
+\item The contracted edge is not in F. We can continue.
+\end{enumerate}
+
+\end{onlyenv}
+\begin{onlyenv}<4>
+\begin{block}{Proof Cont'd}<4>
 When contracting the first edge randomly,
 \begin{enumerate}
 	\item $\forall v \in V, deg(v)\geq k$
@@ -255,7 +281,7 @@ After j iteration, there are n-j super-nodes in the current graph G'.
 \end{block}
 \end{onlyenv}
 \subsection{Time Complexity}	
-\begin{onlyenv}<4>
+\begin{onlyenv}<5>
 \begin{block}{Time Complexity}
 After contracting $n^2\log{}n$ times, the probability that we do not find the optimal solution
 \begin{equation*}
@@ -272,140 +298,6 @@ so the running time is $\mathcal{O}(n^2\log{}n\times \abs{E})$
 %------------------------------------------------
 
 %------------------------------------------------
-
-\begin{frame}
-\frametitle{Bullet Points}
-\begin{itemize}
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-	\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-	\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-	\item Nam cursus est eget velit posuere pellentesque
-	\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
-\end{itemize}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-	\item Statement
-	\item Explanation
-	\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
-\end{frame}
-
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Kleinberg, 2006]{p714} Kleinberg and Tardos (2006)
-\newblock Finding the Global Min Cut
-\newblock \emph{Algorithm Design} 714 - 719
-
-
-
-\bibitem[Karger Diagram]{p1} Thore Husfeldt  (2012)
-\newblock Karger's Algorithm Diagram
-\newblock \emph{Wikipedia} 
-
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
-}
-\end{frame}
 
 %------------------------------------------------
 
