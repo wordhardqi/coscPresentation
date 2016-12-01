@@ -124,7 +124,7 @@
 \begin{frame}
 \frametitle{Motivation}
 \begin{itemize}
-	\item Ford fulkerson has a large running time for finding the minimum cut for large integer flows. It runs in pseudo polynomial time.  This is a big drawback.
+	\item Ford Fulkerson has a large running time for finding the minimum cut for large integer flows. It runs in pseudo polynomial time.  This is a big drawback.
 	\item There exists a randomnized algorithm that could solve the minimum cut problem that is not affected by large integer flows.
 \end{itemize}
 
@@ -171,7 +171,7 @@ However, we have showed even if it can only succeed with small probability, we c
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{The Problem}
+\frametitle{Instance and Question}
 \begin{itemize}
 		\item Instance: An undirected graph G(V, E)
 		\item Question: Find the global minimum cut. Note that global here refers to the fact that any cut is allowed, as there is no sink or source in our graph for this type of problem.
@@ -179,14 +179,14 @@ However, we have showed even if it can only succeed with small probability, we c
 \end{frame}
 
 \begin{frame}
-\frametitle{The Problem 2}
+\frametitle{What is minimum cut?}
 \begin{itemize}
 		\item The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{What is contraction algorithm?}
+\frametitle{Definitions for Understanding Contraction Algorithm}
 \begin{itemize}
 	\item David Karger discovered the contraction algorithm in 1992.
 	\item Multigraph: An undirected graph that is allowed to have multiple edges between the same pair of nodes.
@@ -194,7 +194,7 @@ However, we have showed even if it can only succeed with small probability, we c
 \end{frame}
 
 \begin{frame}
-\frametitle{What is contraction algorithm? 2}
+\frametitle{What is contraction algorithm? Part 2}
 \begin{itemize}
 	\item Randomly choose edge e = (u,v) of G, we take this edge and we create a new graph G' where the nodes that edge e was connected to become one node. 
 	\item Recursively call the contraction algorithm until only 2 nodes are left. 
