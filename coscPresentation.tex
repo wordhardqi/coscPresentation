@@ -182,14 +182,21 @@ However, we have showed even if it can only succeed with small probability, we c
 \frametitle{What is minimum cut?}
 \begin{itemize}
 		\item The minimum cut is a natural measure of how robust the graph is. If you want to disconnect the graph into 2 components, it is the least number of edges you have to cut.
+		\item Red line is a cut
+		\item Green line is a min cut
 \end{itemize}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{min_cut_png_version}
+\end{center}
+
 \end{frame}
 
 \begin{frame}
 \frametitle{Definitions for Understanding Contraction Algorithm}
 \begin{itemize}
-	\item David Karger discovered the contraction algorithm in 1992.
+	\item David Karger: discovered the contraction algorithm in 1992.
 	\item Multigraph: An undirected graph that is allowed to have multiple edges between the same pair of nodes.
+	\item Supernode: consists of nodes that have been combined due to contracting edges
 \end{itemize}
 \end{frame}
 
@@ -398,6 +405,10 @@ This statement requires citation \cite{p1}.
 
 \bibitem[Karger Diagram]{p1} Thore Husfeldt  (2012)
 \newblock Karger's Algorithm Diagram
+\newblock \emph{Wikipedia} 
+
+\bibitem[Min Cut Diagram]{p1} Kilom691 (2012)
+\newblock Min Cut Diagram
 \newblock \emph{Wikipedia} 
 
 \bibitem[Smith, 2012]{p1} John Smith (2012)
